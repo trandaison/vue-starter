@@ -2,15 +2,41 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   extends: [
+    'airbnb-base',
     '@nuxtjs/eslint-config-typescript',
+    'eslint-config-prettier',
+    '@nuxtjs',
     'plugin:nuxt/recommended',
-    'prettier'
+    'plugin:prettier/recommended',
+    'prettier',
   ],
-  plugins: [
-  ],
+  plugins: ['prettier'],
   // add your custom rules here
-  rules: {}
-}
+  rules: {
+    'class-methods-use-this': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'no-plusplus': [
+      'error',
+      {
+        allowForLoopAfterthoughts: true,
+      },
+    ],
+    'import/extensions': 'off',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: [
+          'state', // for vuex state
+          'acc', // for reduce accumulators
+          'e', // for e.returnvalue
+        ],
+      },
+    ],
+    semi: 'off',
+  },
+};
