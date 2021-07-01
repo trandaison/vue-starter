@@ -1,0 +1,44 @@
+.navbar {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 992px) {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.b-sidebar {
+  top: 56px;
+
+  .nav-link {
+    font-size: 0.8125rem;
+
+    &.active {
+      position: relative;
+      background: #6c757d;
+      border-top-left-radius: 0.2rem;
+      border-bottom-left-radius: 0.2rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 8px;
+        background: white;
+        border-top-left-radius: inherit;
+        border-bottom-left-radius: inherit;
+      }
+    }
+  }
+}

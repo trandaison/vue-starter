@@ -1,9 +1,10 @@
 <template>
-  <Tutorial/>
+  <h1>Welcome</h1>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Vue, Component } from 'nuxt-property-decorator';
 
-export default Vue.extend({})
+@Component({ name: 'Index', layout: 'dashboard', middleware: 'auth' })
+export default class Index extends Vue {}
 </script>
